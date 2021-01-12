@@ -1,0 +1,19 @@
+[package]
+name = "sentiment-api"
+version = "0.1.0"
+authors = ["Josh Kasuboski <josh.kasuboski@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rocket = "0.4.6"
+serde = "1.0"
+serde_json = "1.0"
+serde_derive = "1.0"
+rust-bert = "0.12.1"
+
+[dependencies.rocket_contrib]
+version = "0.4.6"
+default-features = false
+features = ["json"]
