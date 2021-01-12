@@ -12,3 +12,5 @@ Send POST requests to `:8000` with `{"data": ["text to analyze"]}`.
 You also need it to be able to find the torch libs that are output. I just set it as an environment variable.
 
 `LD_LIBRARY_PATH=target/release/build/torch-sys-40d4b85b267a68ba/out/libtorch/libtorch/lib/`
+
+This basically just wraps [rust-bert](https://github.com/guillaume-be/rust-bert) 🤲.
