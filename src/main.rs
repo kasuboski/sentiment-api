@@ -54,11 +54,18 @@ fn index(
     Some(Json(ResultsResponse { data: results }))
 }
 
+#[get("/healthz")]
+fn health() -> JsonValue {
+    json!({
+        "status": "up",
+    })
+}
+
 #[catch(404)]
 fn not_found() -> JsonValue {
     json!({
-      "status": "error",
-      "reason": "Resource was not found."
+        "status": "error",
+        "reason": "Resource was not found."
     })
 }
 
@@ -70,7 +77,7 @@ fn main() {
 
     rocket::ignite()
         .manage(Mutex::new(sentiment_classifier))
-        .mount("/", routes![index])
+        .mount("/", routes![index, health])
         .register(catchers![not_found])
         .launch();
 }
